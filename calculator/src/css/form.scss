@@ -3,6 +3,11 @@
         display: flex;
         gap: 32px;
         margin-bottom: 44px;
+        @media screen and (max-width: 767px) and (min-width: 320px) {
+            flex-direction: column;
+            margin-bottom: 16px;
+            gap: 16px;
+        }
     }
 
     &__button {
@@ -16,5 +21,13 @@
         padding: 0px 91.5px;
         padding-top: 14px;
         padding-bottom: 18px;
+        @media screen and (max-width: 767px) and (min-width: 320px) {
+            font-size: 22px;
+            line-height: 90%;
+            padding: 0;
+            padding-top: 18px;
+            padding-bottom: 22px;
+            width: 100%;
+        }
     }
 }
