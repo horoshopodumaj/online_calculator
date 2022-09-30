@@ -1,13 +1,33 @@
+@font-face {
+    font-family: "Gilroy";
+    src: local("Gilroy Regular"), local("Gilroy-Regular"),
+        url("./fonts/Gilroy-Regular/Gilroy-Regular.woff2") format("woff2"),
+        url("./fonts/Gilroy-Regular/Gilroy-Regular.woff") format("woff"),
+        url("./fonts/Gilroy-Regular/Gilroy-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nekst";
+    src: local("Nekst Black"), local("Nekst-Black"),
+        url("./fonts/Nekst-Black/Nekst-Black.woff2") format("woff2"),
+        url("./fonts/Nekst-Black/Nekst-Black.woff") format("woff"),
+        url("./fonts/Nekst-Black/Nekst-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
