@@ -1,0 +1,22 @@
+.summary {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+
+    &__item {
+        width: 33.3333%;
+        max-width: 427px;
+    }
+
+    &__title {
+        font-size: 16px;
+        color: var(--grey);
+        margin-bottom: 8px;
+    }
+
+    &__value {
+        font-size: 54px;
+        line-height: 90%;
+        color: var(--grey);
+    }
+}
