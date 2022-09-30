@@ -2,5 +2,19 @@
     &__wrapper {
         display: flex;
         gap: 32px;
+        margin-bottom: 44px;
+    }
+
+    &__button {
+        font-size: 30px;
+        line-height: 120%;
+        font-family: "Nekst", sans-serif;
+        color: var(--white);
+        background-color: var(--orange);
+        border: 1px solid var(--orange);
+        border-radius: 40px;
+        padding: 0px 91.5px;
+        padding-top: 14px;
+        padding-bottom: 18px;
     }
 }
