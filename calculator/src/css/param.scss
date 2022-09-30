@@ -1,0 +1,39 @@
+.param {
+    &__details {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 24px;
+        border-radius: 16px;
+        border: 1px solid var(--grey-2);
+        background-color: var(--grey-2);
+    }
+
+    &__title {
+        font-size: 16px;
+        color: var(--grey);
+        margin-bottom: 24px;
+    }
+
+    &__value {
+        display: block;
+        width: 100%;
+        font-family: "Nekst", sans-serif;
+        font-size: 30px;
+        line-height: 120%;
+        color: var(--grey);
+        background-color: var(--grey-2);
+    }
+
+    &__mark {
+        font-family: "Nekst", sans-serif;
+        font-size: 30px;
+        line-height: 120%;
+        color: var(--grey);
+    }
+
+    &__range-slider {
+        margin-top: -3px;
+        height: 2px;
+        background-color: var(--orange);
+    }
+}

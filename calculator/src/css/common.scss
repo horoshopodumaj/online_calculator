@@ -28,6 +28,10 @@ $main-front: "Gilroy", sans-serif;
     --orange: #ff9514;
 }
 
+body {
+    font-family: $main-front;
+}
+
 .container {
     margin: 0 auto;
     max-width: 1344px;
