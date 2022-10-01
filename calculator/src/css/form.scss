@@ -3,6 +3,11 @@
         display: flex;
         gap: 32px;
         margin-bottom: 44px;
+        @media screen and (max-width: 1439px) and (min-width: 768px) {
+            flex-direction: column;
+            margin-bottom: 37px;
+            gap: 32px;
+        }
         @media screen and (max-width: 767px) {
             flex-direction: column;
             margin-bottom: 16px;
@@ -21,6 +26,15 @@
         padding: 0px 91.5px;
         padding-top: 14px;
         padding-bottom: 18px;
+        white-space: nowrap;
+        @media screen and (max-width: 1439px) and (min-width: 1024px) {
+            padding-right: 52px;
+            padding-left: 52px;
+        }
+        @media screen and (max-width: 1023px) and (min-width: 768px) {
+            padding-right: 52px;
+            padding-left: 52px;
+        }
         @media screen and (max-width: 767px) {
             font-size: 22px;
             line-height: 90%;

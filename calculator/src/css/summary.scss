@@ -2,6 +2,15 @@
     display: flex;
     gap: 32px;
     align-items: center;
+    flex-wrap: nowrap;
+    @media screen and (max-width: 1439px) and (min-width: 1024px) {
+        gap: 44px;
+        flex-wrap: wrap;
+    }
+    @media screen and (max-width: 1023px) and (min-width: 768px) {
+        gap: 32px;
+        flex-wrap: wrap;
+    }
     @media screen and (max-width: 767px) {
         flex-direction: column;
         gap: 29px;
@@ -9,7 +18,13 @@
 
     &__item {
         width: 33.3333%;
-        max-width: 427px;
+
+        @media screen and (max-width: 1439px) and (min-width: 1024px) {
+            width: 47%;
+        }
+        @media screen and (max-width: 1023px) and (min-width: 768px) {
+            width: 47%;
+        }
         @media screen and (max-width: 767px) {
             width: 100%;
         }
@@ -17,6 +32,7 @@
 
     &__title {
         font-size: 16px;
+        line-height: 150%;
         color: var(--grey);
         margin-bottom: 8px;
         @media screen and (max-width: 767px) {
