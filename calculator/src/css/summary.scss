@@ -2,7 +2,7 @@
     display: flex;
     gap: 32px;
     align-items: center;
-    @media screen and (max-width: 767px) and (min-width: 320px) {
+    @media screen and (max-width: 767px) {
         flex-direction: column;
         gap: 29px;
     }
@@ -10,7 +10,7 @@
     &__item {
         width: 33.3333%;
         max-width: 427px;
-        @media screen and (max-width: 767px) and (min-width: 320px) {
+        @media screen and (max-width: 767px) {
             width: 100%;
         }
     }
@@ -19,7 +19,7 @@
         font-size: 16px;
         color: var(--grey);
         margin-bottom: 8px;
-        @media screen and (max-width: 767px) and (min-width: 320px) {
+        @media screen and (max-width: 767px) {
             font-size: 14px;
             line-height: 136%;
             margin-bottom: 2px;
@@ -32,7 +32,7 @@
         line-height: 90%;
         color: var(--grey);
 
-        @media screen and (max-width: 767px) and (min-width: 320px) {
+        @media screen and (max-width: 767px) {
             font-size: 22px;
             line-height: 90%;
         }
