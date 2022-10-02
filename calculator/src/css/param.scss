@@ -90,11 +90,10 @@
         line-height: 120%;
         background-color: var(--grey-3);
         color: var(--grey);
-        width: 20px;
+        width: 28px;
         @media screen and (max-width: 767px) {
             font-size: 22px;
             line-height: 90%;
-            width: 22px;
         }
     }
 }
@@ -113,8 +112,12 @@ input:focus {
     color: var(--orange);
     left: 24px;
     top: -12px;
-    width: 88% !important;
+    width: calc(100% - 48px) !important;
     padding: 0 !important;
+    @media screen and (max-width: 767px) {
+        left: 20px;
+        width: calc(100% - 40px) !important;
+    }
 }
 .MuiSlider-thumb {
     color: var(--orange);
