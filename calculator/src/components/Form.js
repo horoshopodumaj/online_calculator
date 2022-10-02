@@ -1,4 +1,5 @@
 import React from "react";
+import { Slider } from "@material-ui/core";
 
 export default function Form(props) {
     return (
@@ -12,17 +13,25 @@ export default function Form(props) {
                                 type="text"
                                 autoComplete="off"
                                 className="param__value"
-                                defaultValue={props.autoPrice}
+                                value={props.autoPrice}
                                 inputMode="decimal"
                                 id="input-cost"
                                 onChange={props.onChangePrice}
                             />
                             <p className="param__mark">₽</p>
                         </div>
-                        <div
+
+                        <Slider
+                            style={{ width: "92%", left: "16px" }}
+                            defaultValue={props.autoPrice}
+                            valueLabelDisplay="auto"
+                            min={1000000}
+                            max={6000000}
+                            step={1}
                             className="param__range-slider"
                             id="slider-cost"
-                        ></div>
+                            onChange={props.onChangePriceRange}
+                        />
                     </label>
 
                     <label className="param">

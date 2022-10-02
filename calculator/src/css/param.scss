@@ -96,8 +96,12 @@
     }
 
     &__range-slider {
-        margin-top: -3px;
+        margin-top: -13px;
         height: 2px;
         background-color: var(--orange);
+        .MuiSlider-root {
+            width: 92% !important;
+            left: 16px !important;
+        }
     }
 }

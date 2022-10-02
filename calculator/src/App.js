@@ -55,6 +55,17 @@ export default class App extends Component {
             this.getMonthlyPayment
         );
     };
+
+    onChangePriceRange = (event) => {
+        this.setState(
+            {
+                autoPrice: event.target.ariaValueNow,
+            },
+            this.getInitial,
+            this.getMonthlyPayment
+        );
+        console.log(event.target.ariaValueNow);
+    };
     onChangePercent = (event) => {
         this.setState(
             { percent: parseInt(event.target.value) },
@@ -84,6 +95,7 @@ export default class App extends Component {
                     onChangeMonth={this.onChangeMonth}
                     monthlyPayment={this.state.monthlyPayment}
                     contractAmount={this.state.contractAmount}
+                    onChangePriceRange={this.onChangePriceRange}
                 />
             </React.Fragment>
         );
