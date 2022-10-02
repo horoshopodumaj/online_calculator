@@ -6,12 +6,19 @@
     &__details {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: 16px 24px;
         border-radius: 16px;
         border: 1px solid var(--grey-2);
         background-color: var(--grey-2);
         @media screen and (max-width: 767px) {
             padding: 20px;
+        }
+        &_percent {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            padding-right: 7px;
+            padding-left: 24px;
         }
     }
 
@@ -49,6 +56,42 @@
         @media screen and (max-width: 767px) {
             font-size: 22px;
             line-height: 90%;
+        }
+
+        &_percent {
+            font-family: "Nekst", sans-serif;
+            font-size: 20px;
+            line-height: 120%;
+            color: var(--grey);
+            @media screen and (max-width: 767px) {
+                font-size: 22px;
+                line-height: 90%;
+            }
+        }
+    }
+
+    &__percent {
+        display: flex;
+        align-items: center;
+        border-radius: 16px;
+        background-color: var(--grey-3);
+        padding: 15px 17px;
+        @media screen and (max-width: 767px) {
+            padding: 14px;
+        }
+    }
+
+    &__input {
+        font-family: "Nekst", sans-serif;
+        font-size: 20px;
+        line-height: 120%;
+        background-color: var(--grey-3);
+        color: var(--grey);
+        width: 20px;
+        @media screen and (max-width: 767px) {
+            font-size: 22px;
+            line-height: 90%;
+            width: 22px;
         }
     }
 

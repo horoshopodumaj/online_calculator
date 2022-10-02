@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Form() {
+export default function Form(props) {
     return (
         <form id="form" className="form">
             <div className="container">
@@ -10,12 +10,14 @@ export default function Form() {
                         <div className="param__details">
                             <input
                                 type="text"
+                                autoComplete="off"
                                 className="param__value"
-                                value="3 300 000"
-                                inputmode="decimal"
+                                defaultValue={props.autoPrice}
+                                inputMode="decimal"
                                 id="input-cost"
+                                onChange={props.onChangePrice}
                             />
-                            <h2 className="param__mark">₽</h2>
+                            <p className="param__mark">₽</p>
                         </div>
                         <div
                             className="param__range-slider"
@@ -25,14 +27,21 @@ export default function Form() {
 
                     <label className="param">
                         <p className="param__title">Первоначальный взнос</p>
-                        <div className="param__details">
-                            <input
-                                type="text"
-                                className="param__value"
-                                value="420 000 ₽"
-                                id="input-downpayment"
-                            />
-                            <p className="param__mark">13%</p>
+                        <div className="param__details param__details_percent">
+                            <div className="param__value">
+                                {props.initial} ₽
+                            </div>
+                            <div className="param__percent">
+                                <input
+                                    className="param__input"
+                                    id="input-downpayment"
+                                    type="text"
+                                    inputMode="decimal"
+                                    defaultValue={props.percent}
+                                    onChange={props.onChangePercent}
+                                />
+                                <p className="param__mark_percent">%</p>
+                            </div>
                         </div>
                         <div className="param__range-slider"></div>
                     </label>
@@ -42,8 +51,10 @@ export default function Form() {
                         <div className="param__details">
                             <input
                                 type="text"
+                                autoComplete="off"
                                 className="param__value"
-                                value="60"
+                                defaultValue={props.months}
+                                onChange={props.onChangeMonth}
                                 id="input-term"
                             />
                             <p className="param__mark">мес.</p>
@@ -60,7 +71,8 @@ export default function Form() {
                             className="summary__value"
                             id="total-month-payment"
                         >
-                            XXXX<span> ₽</span>
+                            {props.contractAmount}
+                            <span> ₽</span>
                         </div>
                     </div>
 
@@ -69,7 +81,8 @@ export default function Form() {
                             Ежемесячный платеж от
                         </div>
                         <div className="summary__value" id="total-percent">
-                            XX<span> ₽</span>
+                            {props.monthlyPayment}
+                            <span> ₽</span>
                         </div>
                     </div>
 
