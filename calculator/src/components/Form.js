@@ -8,7 +8,7 @@ export default function Form(props) {
                 <div className="form__wrapper">
                     <label className="param form__param">
                         <p className="param__title">Стоимость автомобиля</p>
-                        <div className="param__details">
+                        <div className={`param__details`}>
                             <input
                                 type="text"
                                 autoComplete="off"
@@ -34,7 +34,9 @@ export default function Form(props) {
 
                     <label className="param">
                         <p className="param__title">Первоначальный взнос</p>
-                        <div className="param__details param__details_percent">
+                        <div
+                            className={`param__details param__details_percent`}
+                        >
                             <div className="param__value">
                                 {props.initial} ₽
                             </div>
@@ -62,7 +64,7 @@ export default function Form(props) {
 
                     <label className="param">
                         <p className="param__title">Срок лизинга</p>
-                        <div className="param__details">
+                        <div className={`param__details`}>
                             <input
                                 type="text"
                                 autoComplete="off"
