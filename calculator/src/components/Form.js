@@ -22,13 +22,11 @@ export default function Form(props) {
                         </div>
 
                         <Slider
-                            style={{ width: "92%", left: "16px" }}
                             defaultValue={props.autoPrice}
-                            valueLabelDisplay="auto"
+                            name="price"
                             min={1000000}
                             max={6000000}
-                            step={1}
-                            className="param__range-slider"
+                            step={100}
                             id="slider-cost"
                             onChange={props.onChangePriceRange}
                         />
@@ -46,13 +44,20 @@ export default function Form(props) {
                                     id="input-downpayment"
                                     type="text"
                                     inputMode="decimal"
-                                    defaultValue={props.percent}
+                                    value={props.percent}
                                     onChange={props.onChangePercent}
                                 />
                                 <p className="param__mark_percent">%</p>
                             </div>
                         </div>
-                        <div className="param__range-slider"></div>
+                        <Slider
+                            defaultValue={props.percent}
+                            name="percent"
+                            min={10}
+                            max={60}
+                            step={1}
+                            onChange={props.onChangePercentRange}
+                        />
                     </label>
 
                     <label className="param">
@@ -62,13 +67,20 @@ export default function Form(props) {
                                 type="text"
                                 autoComplete="off"
                                 className="param__value"
-                                defaultValue={props.months}
+                                value={props.months}
                                 onChange={props.onChangeMonth}
                                 id="input-term"
                             />
                             <p className="param__mark">мес.</p>
                         </div>
-                        <div className="param__range-slider"></div>
+                        <Slider
+                            defaultValue={props.months}
+                            name="percent"
+                            min={1}
+                            max={60}
+                            step={1}
+                            onChange={props.onChangeMonthRange}
+                        />
                     </label>
                 </div>
                 <div className="summary form__summary">

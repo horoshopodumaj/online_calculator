@@ -64,7 +64,6 @@ export default class App extends Component {
             this.getInitial,
             this.getMonthlyPayment
         );
-        console.log(event.target.ariaValueNow);
     };
     onChangePercent = (event) => {
         this.setState(
@@ -72,10 +71,20 @@ export default class App extends Component {
             this.getInitial
         );
     };
+    onChangePercentRange = (event) => {
+        this.setState({ percent: event.target.ariaValueNow }, this.getInitial);
+    };
 
     onChangeMonth = (event) => {
         this.setState(
             { months: parseInt(event.target.value) },
+            this.getMonthlyPayment,
+            this.getContractAmount
+        );
+    };
+    onChangeMonthRange = (event) => {
+        this.setState(
+            { months: event.target.ariaValueNow },
             this.getMonthlyPayment,
             this.getContractAmount
         );
@@ -96,6 +105,8 @@ export default class App extends Component {
                     monthlyPayment={this.state.monthlyPayment}
                     contractAmount={this.state.contractAmount}
                     onChangePriceRange={this.onChangePriceRange}
+                    onChangePercentRange={this.onChangePercentRange}
+                    onChangeMonthRange={this.onChangeMonthRange}
                 />
             </React.Fragment>
         );
