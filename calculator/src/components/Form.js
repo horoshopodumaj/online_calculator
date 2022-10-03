@@ -55,6 +55,7 @@ export default function Form(props) {
                             </div>
                         </div>
                         <Slider
+                            id="slider-percent"
                             defaultValue={props.percent}
                             name="percent"
                             min={10}
@@ -79,6 +80,7 @@ export default function Form(props) {
                             <p className="param__mark">мес.</p>
                         </div>
                         <Slider
+                            id="slider-month"
                             defaultValue={props.months}
                             name="percent"
                             min={1}
