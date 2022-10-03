@@ -17,6 +17,7 @@ export default function Form(props) {
                                 inputMode="decimal"
                                 id="input-cost"
                                 onChange={props.onChangePrice}
+                                onBlur={props.onBlurPrice}
                             />
                             <p className="param__mark">₽</p>
                         </div>
@@ -48,6 +49,7 @@ export default function Form(props) {
                                     inputMode="decimal"
                                     value={props.percent}
                                     onChange={props.onChangePercent}
+                                    onBlur={props.onBlurPercent}
                                 />
                                 <p className="param__mark_percent">%</p>
                             </div>
@@ -72,6 +74,7 @@ export default function Form(props) {
                                 value={props.months}
                                 onChange={props.onChangeMonth}
                                 id="input-term"
+                                onBlur={props.onBlurMonth}
                             />
                             <p className="param__mark">мес.</p>
                         </div>
