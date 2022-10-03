@@ -139,6 +139,9 @@ input:focus {
 }
 
 .slider .rc-slider-handle:active {
+    width: 20px;
+    height: 20px;
+    margin-top: -9px;
     border-color: var(--orange);
     box-shadow: none;
     cursor: pointer;
@@ -152,10 +155,19 @@ input:focus {
 
 .slider .rc-slider-rail {
     color: var(--grey-4);
-    height: 2px;
+    height: 1px;
+    top: 1px;
 }
 
 .slider .rc-slider-track {
     background-color: var(--orange);
     height: 2px;
+}
+.slider:hover .rc-slider-track {
+    height: 1px;
+    top: 1px;
+}
+.param:hover .rc-slider-track {
+    height: 1px;
+    top: 1px;
 }

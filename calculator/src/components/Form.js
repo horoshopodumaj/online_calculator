@@ -55,7 +55,7 @@ export default function Form(props) {
                             </div>
                         </div>
                         <Slider
-                            className="slider"
+                            className={`slider `}
                             value={props.percent}
                             min={10}
                             max={60}
