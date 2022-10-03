@@ -1,0 +1,48 @@
+.slider .rc-slider-handle {
+    color: var(--orange);
+    width: 20px;
+    height: 20px;
+    margin-top: -9px;
+    background-color: var(--orange);
+    border: solid 2px var(--orange);
+    opacity: 1;
+    cursor: pointer;
+
+    &:hover {
+        width: 24px;
+        height: 24px;
+        box-shadow: none;
+        margin-top: -10px;
+        border: solid 2px var(--orange);
+    }
+
+    &:active {
+        width: 20px;
+        height: 20px;
+        margin-top: -9px;
+        border-color: var(--orange);
+        box-shadow: none;
+        cursor: pointer;
+    }
+}
+
+.slider
+    .rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+    border-color: var(--orange);
+    box-shadow: none;
+}
+
+.slider .rc-slider-rail {
+    color: var(--grey-4);
+    height: 1px;
+    top: 1px;
+}
+
+.slider .rc-slider-track {
+    background-color: var(--orange);
+    height: 2px;
+}
+.slider:hover .rc-slider-track {
+    height: 1px;
+    top: 1px;
+}
