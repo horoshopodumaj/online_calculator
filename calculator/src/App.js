@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Form from "./components/Form";
 import Header from "./components/Header";
+import * as axios from "axios";
 
 export default class App extends Component {
     constructor(props) {
@@ -143,6 +144,33 @@ export default class App extends Component {
         );
     };
 
+    onSubmit = (event) => {
+        const data = { ...this.state };
+        event.preventDefault();
+
+        axios({
+            method: "POST",
+            url: "https://eoj3r7f3r4ef6v4.m.pipedream.net",
+            data: JSON.stringify(data),
+            headers: { "Content-Type": "application/json" },
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                if (error.response) {
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log("Error", error.message);
+                }
+                console.log(error.config);
+            });
+    };
+
     render() {
         return (
             <React.Fragment>
@@ -164,6 +192,7 @@ export default class App extends Component {
                     onBlurPercent={this.onBlurPercent}
                     onBlurMonth={this.onBlurMonth}
                     defaultvalue={this.state.defaultvalue}
+                    onSubmit={this.onSubmit}
                 />
             </React.Fragment>
         );

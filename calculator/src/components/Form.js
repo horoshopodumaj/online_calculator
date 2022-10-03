@@ -4,7 +4,7 @@ import "rc-slider/assets/index.css";
 
 export default function Form(props) {
     return (
-        <form id="form" className="form">
+        <form id="form" className="form" onSubmit={props.onSubmit}>
             <div className="container">
                 <div className="form__wrapper">
                     <label className="param form__param">
