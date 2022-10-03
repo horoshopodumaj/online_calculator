@@ -9,7 +9,6 @@ export default class App extends Component {
             percent: 10,
             autoPrice: 3300000,
             months: 60,
-            interestRate: 0.035,
             initial: 0,
             monthlyPayment: 0,
             contractAmount: 0,
@@ -35,7 +34,7 @@ export default class App extends Component {
         let monthlyPayment = Math.round(
             (this.state.autoPrice - this.state.initial) *
                 ((0.035 * Math.pow(1 + 0.035, this.state.months)) /
-                    Math.pow(1 + 0.035, this.state.months - 1))
+                    (Math.pow(1 + 0.035, this.state.months) - 1))
         );
         this.setState({ monthlyPayment }, this.getContractAmount);
     };
@@ -81,7 +80,7 @@ export default class App extends Component {
     onChangePriceRange = (event) => {
         this.setState(
             {
-                autoPrice: event.target.ariaValueNow,
+                autoPrice: event,
             },
             this.getInitial,
             this.getMonthlyPayment
@@ -106,20 +105,20 @@ export default class App extends Component {
         );
     };
     onChangePercentRange = (event) => {
-        this.setState({ percent: event.target.ariaValueNow }, this.getInitial);
+        this.setState({ percent: event }, this.getInitial);
     };
 
     onBlurMonth = (event) => {
         if (event.target.value < 1) {
             this.setState(
                 { months: 1 },
-                this.getInitial,
+                this.getMonthlyPayment,
                 this.getContractAmount
             );
         } else if (event.target.value > 60) {
             this.setState(
                 { months: 60 },
-                this.getInitial,
+                this.getMonthlyPayment,
                 this.getContractAmount
             );
         }
@@ -138,7 +137,7 @@ export default class App extends Component {
     };
     onChangeMonthRange = (event) => {
         this.setState(
-            { months: event.target.ariaValueNow },
+            { months: event },
             this.getMonthlyPayment,
             this.getContractAmount
         );
@@ -164,6 +163,7 @@ export default class App extends Component {
                     onBlurPrice={this.onBlurPrice}
                     onBlurPercent={this.onBlurPercent}
                     onBlurMonth={this.onBlurMonth}
+                    defaultvalue={this.state.defaultvalue}
                 />
             </React.Fragment>
         );

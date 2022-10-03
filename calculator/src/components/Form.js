@@ -1,5 +1,6 @@
 import React from "react";
-import { Slider } from "@material-ui/core";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 
 export default function Form(props) {
     return (
@@ -15,20 +16,19 @@ export default function Form(props) {
                                 className="param__value"
                                 value={props.autoPrice}
                                 inputMode="decimal"
+                                name="price"
                                 id="input-cost"
                                 onChange={props.onChangePrice}
                                 onBlur={props.onBlurPrice}
                             />
                             <p className="param__mark">₽</p>
                         </div>
-
                         <Slider
-                            defaultValue={props.autoPrice}
-                            name="price"
+                            className="slider"
+                            value={props.autoPrice}
                             min={1000000}
                             max={6000000}
                             step={100}
-                            id="slider-cost"
                             onChange={props.onChangePriceRange}
                         />
                     </label>
@@ -55,9 +55,8 @@ export default function Form(props) {
                             </div>
                         </div>
                         <Slider
-                            id="slider-percent"
-                            defaultValue={props.percent}
-                            name="percent"
+                            className="slider"
+                            value={props.percent}
                             min={10}
                             max={60}
                             step={1}
@@ -74,15 +73,13 @@ export default function Form(props) {
                                 className="param__value"
                                 value={props.months}
                                 onChange={props.onChangeMonth}
-                                id="input-term"
                                 onBlur={props.onBlurMonth}
                             />
                             <p className="param__mark">мес.</p>
                         </div>
                         <Slider
-                            id="slider-month"
-                            defaultValue={props.months}
-                            name="percent"
+                            className="slider"
+                            value={props.months}
                             min={1}
                             max={60}
                             step={1}
