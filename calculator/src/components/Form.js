@@ -3,6 +3,7 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import Button from "./Button";
 import SummaryItem from "./SummaryItem";
+import ParamDetails from "./ParamDetails";
 
 export default function Form(props) {
     return (
@@ -15,21 +16,13 @@ export default function Form(props) {
                         }`}
                     >
                         <p className="param__title">Стоимость автомобиля</p>
-                        <div className={`param__details`}>
-                            <input
-                                disabled={props.disabled}
-                                type="text"
-                                autoComplete="off"
-                                className="param__value"
-                                value={props.autoPrice}
-                                inputMode="decimal"
-                                name="price"
-                                id="input-cost"
-                                onChange={props.onChangePrice}
-                                onBlur={props.onBlurPrice}
-                            />
-                            <p className="param__mark">₽</p>
-                        </div>
+                        <ParamDetails
+                            disabled={props.disabled}
+                            value={props.autoPrice}
+                            onChange={props.onChangePrice}
+                            onBlur={props.onBlurPrice}
+                            mark={"₽"}
+                        />
                         <Slider
                             disabled={props.disabled}
                             className={`slider ${
@@ -59,7 +52,6 @@ export default function Form(props) {
                                 <input
                                     disabled={props.disabled}
                                     className="param__input"
-                                    id="input-downpayment"
                                     type="text"
                                     inputMode="decimal"
                                     value={props.percent}
@@ -88,18 +80,13 @@ export default function Form(props) {
                         }`}
                     >
                         <p className="param__title">Срок лизинга</p>
-                        <div className={`param__details`}>
-                            <input
-                                disabled={props.disabled}
-                                type="text"
-                                autoComplete="off"
-                                className="param__value"
-                                value={props.months}
-                                onChange={props.onChangeMonth}
-                                onBlur={props.onBlurMonth}
-                            />
-                            <p className="param__mark">мес.</p>
-                        </div>
+                        <ParamDetails
+                            disabled={props.disabled}
+                            value={props.months}
+                            onChange={props.onChangeMonth}
+                            onBlur={props.onBlurMonth}
+                            mark={"мес."}
+                        />
                         <Slider
                             disabled={props.disabled}
                             className={`slider ${
@@ -124,7 +111,6 @@ export default function Form(props) {
                         title={"Ежемесячный платеж от"}
                         value={props.monthlyPayment}
                     />
-
                     <Button disabled={props.disabled} />
                 </div>
             </div>
