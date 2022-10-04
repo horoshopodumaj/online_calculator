@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import Button from "./Button";
+import SummaryItem from "./SummaryItem";
 
 export default function Form(props) {
     return (
@@ -113,36 +114,16 @@ export default function Form(props) {
                     </label>
                 </div>
                 <div className="summary form__summary">
-                    <div
-                        className={`summary__item ${
-                            props.disabled ? "summary__item_disabled" : ""
-                        }`}
-                    >
-                        <div className="summary__title">
-                            Сумма договора лизинга
-                        </div>
-                        <div
-                            className="summary__value"
-                            id="total-month-payment"
-                        >
-                            {props.contractAmount}
-                            <span> ₽</span>
-                        </div>
-                    </div>
-
-                    <div
-                        className={`summary__item ${
-                            props.disabled ? "summary__item_disabled" : ""
-                        }`}
-                    >
-                        <div className="summary__title">
-                            Ежемесячный платеж от
-                        </div>
-                        <div className="summary__value" id="total-percent">
-                            {props.monthlyPayment}
-                            <span> ₽</span>
-                        </div>
-                    </div>
+                    <SummaryItem
+                        disabled={props.disabled}
+                        title={"Сумма договора лизинга"}
+                        value={props.contractAmount}
+                    />
+                    <SummaryItem
+                        disabled={props.disabled}
+                        title={"Ежемесячный платеж от"}
+                        value={props.monthlyPayment}
+                    />
 
                     <Button disabled={props.disabled} />
                 </div>
