@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import Spinner from "./Spinner";
 
 export default function Form(props) {
     return (
@@ -149,7 +150,7 @@ export default function Form(props) {
                             props.disabled ? "form__button_disabled" : ""
                         }`}
                     >
-                        Оставить заявку
+                        {props.disabled ? <Spinner /> : "Оставить заявку"}
                     </button>
                 </div>
             </div>

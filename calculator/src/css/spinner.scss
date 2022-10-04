@@ -1,0 +1,25 @@
+.spinner {
+    width: 21px;
+    height: 21px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    border-bottom-color: var(--orange);
+    animation: spin 500ms infinite linear;
+    &__container {
+        display: flex;
+        width: 240px;
+        height: 36px;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (max-width: 767px) {
+            height: 19px;
+            width: 100%;
+        }
+    }
+}
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
