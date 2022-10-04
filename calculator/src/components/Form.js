@@ -46,7 +46,10 @@ export default function Form(props) {
                             className={`param__details param__details_percent`}
                         >
                             <div className="param__value">
-                                {props.initial} ₽
+                                {props.initial
+                                    .toString()
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
+                                ₽
                             </div>
                             <div className="param__percent">
                                 <input

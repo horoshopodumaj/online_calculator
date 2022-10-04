@@ -9,7 +9,7 @@ export default function SummaryItem(props) {
         >
             <div className="summary__title">{props.title}</div>
             <div className="summary__value" id="total-month-payment">
-                {props.value}
+                {props.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
                 <span> ₽</span>
             </div>
         </div>
