@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import Spinner from "./Spinner";
+import Button from "./Button";
 
 export default function Form(props) {
     return (
@@ -144,14 +144,7 @@ export default function Form(props) {
                         </div>
                     </div>
 
-                    <button
-                        type="submit"
-                        className={`form__button ${
-                            props.disabled ? "form__button_disabled" : ""
-                        }`}
-                    >
-                        {props.disabled ? <Spinner /> : "Оставить заявку"}
-                    </button>
+                    <Button disabled={props.disabled} />
                 </div>
             </div>
         </form>
