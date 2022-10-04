@@ -18,6 +18,9 @@
 
     &__item {
         width: 33.3333%;
+        &_disabled {
+            opacity: 0.4;
+        }
 
         @media screen and (max-width: 1439px) and (min-width: 1024px) {
             width: 47%;

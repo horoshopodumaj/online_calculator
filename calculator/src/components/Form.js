@@ -112,7 +112,11 @@ export default function Form(props) {
                     </label>
                 </div>
                 <div className="summary form__summary">
-                    <div className="summary__item">
+                    <div
+                        className={`summary__item ${
+                            props.disabled ? "summary__item_disabled" : ""
+                        }`}
+                    >
                         <div className="summary__title">
                             Сумма договора лизинга
                         </div>
@@ -125,7 +129,11 @@ export default function Form(props) {
                         </div>
                     </div>
 
-                    <div className="summary__item">
+                    <div
+                        className={`summary__item ${
+                            props.disabled ? "summary__item_disabled" : ""
+                        }`}
+                    >
                         <div className="summary__title">
                             Ежемесячный платеж от
                         </div>
