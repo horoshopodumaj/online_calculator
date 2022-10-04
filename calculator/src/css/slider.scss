@@ -42,7 +42,19 @@
     background-color: var(--orange);
     height: 2px;
 }
-.slider:hover .rc-slider-track {
-    height: 1px;
-    top: 1px;
+.slider.rc-slider-disable .rc-slider-track {
+    background-color: var(--orange);
+}
+.slider.rc-slider-disable .rc-slider-handle {
+    background-color: var(--orange);
+    border-color: var(--orange);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.slider.rc-slider-disable .rc-slider-handle:hover {
+    width: 20px;
+    height: 20px;
+    margin-top: -9px;
+    cursor: not-allowed;
 }

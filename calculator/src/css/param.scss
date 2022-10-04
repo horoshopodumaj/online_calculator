@@ -1,5 +1,8 @@
 .param {
     width: 33.3333%;
+    &_disabled {
+        opacity: 0.4;
+    }
     @media screen and (max-width: 1439px) {
         width: 100%;
     }
@@ -123,4 +126,8 @@ input:focus {
 .param:hover .rc-slider-track {
     height: 1px;
     top: 1px;
+}
+.param:hover .slider.rc-slider-disable .rc-slider-track {
+    height: 2px;
+    top: 0px;
 }

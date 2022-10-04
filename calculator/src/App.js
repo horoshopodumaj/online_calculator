@@ -13,6 +13,7 @@ export default class App extends Component {
             initial: 0,
             monthlyPayment: 0,
             contractAmount: 0,
+            disabled: false,
         };
     }
 
@@ -147,28 +148,30 @@ export default class App extends Component {
     onSubmit = (event) => {
         const data = { ...this.state };
         event.preventDefault();
-
-        axios({
-            method: "POST",
-            url: "https://eoj3r7f3r4ef6v4.m.pipedream.net",
-            data: JSON.stringify(data),
-            headers: { "Content-Type": "application/json" },
-        })
-            .then(function (response) {
-                console.log(response);
+        if (!this.state.disabled) {
+            this.setState({ disabled: true });
+            axios({
+                method: "POST",
+                url: "https://eoj3r7f3r4ef6v4.m.pipedream.net",
+                data: JSON.stringify(data),
+                headers: { "Content-Type": "application/json" },
             })
-            .catch(function (error) {
-                if (error.response) {
-                    console.log(error.response.data);
-                    console.log(error.response.status);
-                    console.log(error.response.headers);
-                } else if (error.request) {
-                    console.log(error.request);
-                } else {
-                    console.log("Error", error.message);
-                }
-                console.log(error.config);
-            });
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    if (error.response) {
+                        console.log(error.response.data);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);
+                    } else if (error.request) {
+                        console.log(error.request);
+                    } else {
+                        console.log("Error", error.message);
+                    }
+                    console.log(error.config);
+                });
+        }
     };
 
     render() {
@@ -193,6 +196,7 @@ export default class App extends Component {
                     onBlurMonth={this.onBlurMonth}
                     defaultvalue={this.state.defaultvalue}
                     onSubmit={this.onSubmit}
+                    disabled={this.state.disabled}
                 />
             </React.Fragment>
         );

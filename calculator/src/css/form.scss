@@ -27,6 +27,9 @@
         padding-top: 14px;
         padding-bottom: 18px;
         white-space: nowrap;
+        &_disabled {
+            opacity: 0.4;
+        }
         @media screen and (max-width: 1439px) and (min-width: 1024px) {
             padding-right: 52px;
             padding-left: 52px;
@@ -46,6 +49,11 @@
         &:hover {
             background-color: var(--black);
             border: 1px solid var(--black);
+            &.form__button_disabled {
+                background-color: var(--orange);
+                border: 1px solid var(--orange);
+                cursor: not-allowed;
+            }
         }
 
         &:active {

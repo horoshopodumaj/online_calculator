@@ -7,10 +7,15 @@ export default function Form(props) {
         <form id="form" className="form" onSubmit={props.onSubmit}>
             <div className="container">
                 <div className="form__wrapper">
-                    <label className="param form__param">
+                    <label
+                        className={`param form__param ${
+                            props.disabled ? "param_disabled" : ""
+                        }`}
+                    >
                         <p className="param__title">Стоимость автомобиля</p>
                         <div className={`param__details`}>
                             <input
+                                disabled={props.disabled}
                                 type="text"
                                 autoComplete="off"
                                 className="param__value"
@@ -24,7 +29,10 @@ export default function Form(props) {
                             <p className="param__mark">₽</p>
                         </div>
                         <Slider
-                            className="slider"
+                            disabled={props.disabled}
+                            className={`slider ${
+                                props.disabled ? "rc-slider-disable" : ""
+                            }`}
                             value={props.autoPrice}
                             min={1000000}
                             max={6000000}
@@ -33,7 +41,11 @@ export default function Form(props) {
                         />
                     </label>
 
-                    <label className="param">
+                    <label
+                        className={`param ${
+                            props.disabled ? "param_disabled" : ""
+                        }`}
+                    >
                         <p className="param__title">Первоначальный взнос</p>
                         <div
                             className={`param__details param__details_percent`}
@@ -43,6 +55,7 @@ export default function Form(props) {
                             </div>
                             <div className="param__percent">
                                 <input
+                                    disabled={props.disabled}
                                     className="param__input"
                                     id="input-downpayment"
                                     type="text"
@@ -55,7 +68,10 @@ export default function Form(props) {
                             </div>
                         </div>
                         <Slider
-                            className={`slider `}
+                            disabled={props.disabled}
+                            className={`slider ${
+                                props.disabled ? "rc-slider-disable" : ""
+                            }`}
                             value={props.percent}
                             min={10}
                             max={60}
@@ -64,10 +80,15 @@ export default function Form(props) {
                         />
                     </label>
 
-                    <label className="param">
+                    <label
+                        className={`param ${
+                            props.disabled ? "param_disabled" : ""
+                        }`}
+                    >
                         <p className="param__title">Срок лизинга</p>
                         <div className={`param__details`}>
                             <input
+                                disabled={props.disabled}
                                 type="text"
                                 autoComplete="off"
                                 className="param__value"
@@ -78,7 +99,10 @@ export default function Form(props) {
                             <p className="param__mark">мес.</p>
                         </div>
                         <Slider
-                            className="slider"
+                            disabled={props.disabled}
+                            className={`slider ${
+                                props.disabled ? "rc-slider-disable" : ""
+                            }`}
                             value={props.months}
                             min={1}
                             max={60}
@@ -111,7 +135,12 @@ export default function Form(props) {
                         </div>
                     </div>
 
-                    <button type="submit" className="form__button">
+                    <button
+                        type="submit"
+                        className={`form__button ${
+                            props.disabled ? "form__button_disabled" : ""
+                        }`}
+                    >
                         Оставить заявку
                     </button>
                 </div>
