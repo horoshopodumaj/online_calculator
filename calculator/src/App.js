@@ -47,6 +47,12 @@ export default class App extends Component {
         this.setState({ contractAmount });
     };
 
+    onClickHeader = () => {
+        if (this.state.disabled) {
+            this.setState({ disabled: false });
+        }
+    };
+
     onBlurPrice = (event) => {
         if (event.target.rawValue < 1000000) {
             this.setState(
@@ -177,7 +183,7 @@ export default class App extends Component {
     render() {
         return (
             <React.Fragment>
-                <Header />
+                <Header onClickHeader={this.onClickHeader} />
                 <Form
                     percent={this.state.percent}
                     autoPrice={this.state.autoPrice}
