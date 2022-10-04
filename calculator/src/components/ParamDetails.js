@@ -1,9 +1,10 @@
 import React from "react";
+import Cleave from "cleave.js/react";
 
 export default function Label(props) {
     return (
         <div className="param__details">
-            <input
+            <Cleave
                 disabled={props.disabled}
                 type="text"
                 autoComplete="off"
@@ -12,6 +13,11 @@ export default function Label(props) {
                 inputMode="decimal"
                 onChange={props.onChange}
                 onBlur={props.onBlur}
+                options={{
+                    numeral: true,
+                    numeralThousandsGroupStyle: "thousand",
+                    delimiter: " ",
+                }}
             />
             <p className="param__mark">{props.mark}</p>
         </div>

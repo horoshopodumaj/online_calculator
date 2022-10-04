@@ -48,7 +48,7 @@ export default class App extends Component {
     };
 
     onBlurPrice = (event) => {
-        if (event.target.value < 1000000) {
+        if (event.target.rawValue < 1000000) {
             this.setState(
                 {
                     autoPrice: 1000000,
@@ -56,7 +56,7 @@ export default class App extends Component {
                 this.getInitial,
                 this.getMonthlyPayment
             );
-        } else if (event.target.value > 6000000) {
+        } else if (event.target.rawValue > 6000000) {
             this.setState(
                 {
                     autoPrice: 6000000,
@@ -70,9 +70,9 @@ export default class App extends Component {
     onChangePrice = (event) => {
         this.setState(
             {
-                autoPrice: !event.target.value.match(/\d/)
+                autoPrice: !event.target.rawValue.match(/\d/)
                     ? ""
-                    : Number(event.target.value),
+                    : Number(event.target.rawValue),
             },
             this.getInitial,
             this.getMonthlyPayment
@@ -111,13 +111,13 @@ export default class App extends Component {
     };
 
     onBlurMonth = (event) => {
-        if (event.target.value < 1) {
+        if (event.target.rawValue < 1) {
             this.setState(
                 { months: 1 },
                 this.getMonthlyPayment,
                 this.getContractAmount
             );
-        } else if (event.target.value > 60) {
+        } else if (event.target.rawValue > 60) {
             this.setState(
                 { months: 60 },
                 this.getMonthlyPayment,
@@ -129,9 +129,9 @@ export default class App extends Component {
     onChangeMonth = (event) => {
         this.setState(
             {
-                months: !event.target.value.match(/\d/)
+                months: !event.target.rawValue.match(/\d/)
                     ? ""
-                    : Number(event.target.value),
+                    : Number(event.target.rawValue),
             },
             this.getMonthlyPayment,
             this.getContractAmount
