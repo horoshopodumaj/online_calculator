@@ -48,7 +48,7 @@ export default function Form(props) {
                             <div className="param__value">
                                 {props.initial
                                     .toString()
-                                    .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
                                 ₽
                             </div>
                             <div className="param__percent">
