@@ -47,12 +47,6 @@ export default class App extends Component {
         this.setState({ contractAmount });
     };
 
-    onClickHeader = () => {
-        if (this.state.disabled) {
-            this.setState({ disabled: false });
-        }
-    };
-
     onBlurPrice = (event) => {
         if (event.target.rawValue < 1000000) {
             this.setState(
@@ -152,39 +146,33 @@ export default class App extends Component {
         );
     };
 
-    onSubmit = (event) => {
+    onSubmit = async (event) => {
         const data = { ...this.state };
         event.preventDefault();
-        if (!this.state.disabled) {
-            this.setState({ disabled: true });
-            axios({
-                method: "POST",
-                url: "https://eoj3r7f3r4ef6v4.m.pipedream.net",
-                data: JSON.stringify(data),
-                headers: { "Content-Type": "application/json" },
-            })
-                .then(function (response) {
-                    console.log(response);
-                })
-                .catch(function (error) {
-                    if (error.response) {
-                        console.log(error.response.data);
-                        console.log(error.response.status);
-                        console.log(error.response.headers);
-                    } else if (error.request) {
-                        console.log(error.request);
-                    } else {
-                        console.log("Error", error.message);
-                    }
-                    console.log(error.config);
+        try {
+            if (!this.state.disabled) {
+                this.setState({ disabled: true });
+                const { status } = await axios({
+                    method: "POST",
+                    url: "https://eoj3r7f3r4ef6v4.m.pipedream.net",
+                    data: JSON.stringify(data),
+                    headers: { "Content-Type": "application/json" },
                 });
+                if (status === 200) {
+                    console.log(status);
+                    this.setState({ disabled: false });
+                }
+            }
+        } catch (error) {
+            alert("Что-то пошло не так");
+            this.setState({ disabled: false });
         }
     };
 
     render() {
         return (
             <React.Fragment>
-                <Header onClickHeader={this.onClickHeader} />
+                <Header />
                 <Form
                     percent={this.state.percent}
                     autoPrice={this.state.autoPrice}
