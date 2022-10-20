@@ -4,6 +4,7 @@ import "rc-slider/assets/index.css";
 import Button from "./Button";
 import SummaryItem from "./SummaryItem";
 import ParamDetails from "./ParamDetails";
+import Cleave from "cleave.js/react";
 
 export default function Form(props) {
     return (
@@ -52,7 +53,8 @@ export default function Form(props) {
                                 ₽
                             </div>
                             <div className="param__percent">
-                                <input
+                                <Cleave
+                                    autoComplete="off"
                                     disabled={props.disabled}
                                     className="param__input"
                                     type="text"
@@ -60,7 +62,13 @@ export default function Form(props) {
                                     value={props.percent}
                                     onChange={props.onChangePercent}
                                     onBlur={props.onBlurPercent}
+                                    options={{
+                                        numeral: true,
+                                        numeralThousandsGroupStyle: "thousand",
+                                        delimiter: " ",
+                                    }}
                                 />
+
                                 <p className="param__mark_percent">%</p>
                             </div>
                         </div>

@@ -96,18 +96,19 @@ export default class App extends Component {
     };
 
     onBlurPercent = (event) => {
-        if (event.target.value < 10) {
+        if (event.target.rawValue < 10) {
             this.setState({ percent: 10 }, this.getInitial);
-        } else if (event.target.value > 60) {
+        } else if (event.target.rawValue > 60) {
             this.setState({ percent: 60 }, this.getInitial);
         }
     };
     onChangePercent = (event) => {
+        console.log(event);
         this.setState(
             {
-                percent: !event.target.value.match(/\d/)
+                percent: !event.target.rawValue.match(/\d/)
                     ? ""
-                    : Number(event.target.value),
+                    : Number(event.target.rawValue),
             },
             this.getInitial
         );
